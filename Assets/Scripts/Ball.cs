@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
+    [Header("Movement")]
+    [SerializeField] [Range(1,20)] [Tooltip("force to move object")]float force;
+
+    public Rigidbody rb;
+
+    private void Awake()
+    {
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+       // rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKey(KeyCode.Space))
+        {
+            rb.AddForce(transform.up * force, ForceMode.VelocityChange);
+        }
     }
 }
