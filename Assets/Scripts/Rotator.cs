@@ -6,17 +6,9 @@ using UnityEngine;
 public class Rotator : MonoBehaviour
 {
     [SerializeField] [Range(-360, 360)] float rate;
-    [SerializeField] [Range(1, 10)] float speed;
-
-
-
+   
     void Update()
     {
-
         transform.rotation *= Quaternion.AngleAxis(rate * Time.deltaTime, Vector3.up);
-        if(Input.GetKey(KeyCode.LeftShift) )
-        {
-            transform.position += transform.forward * speed *Time.deltaTime;
-        }
     }
 }
