@@ -19,7 +19,6 @@ public class PhysicsCharacterController : MonoBehaviour
 
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
        rb = GetComponent<Rigidbody>();   
     }
 
@@ -31,6 +30,7 @@ public class PhysicsCharacterController : MonoBehaviour
 
         Quaternion yrotation = Quaternion.AngleAxis(view.rotation.eulerAngles.y, Vector3.up);
         force = yrotation * direction * maxForce;
+        rb.AddForce(force,ForceMode.Force);
 
         Debug.DrawRay(transform.position, Vector3.down * rayLength, Color.red);
         if (Input.GetButtonDown("Jump") && onGround())
@@ -39,10 +39,10 @@ public class PhysicsCharacterController : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-        rb.AddForce(force, ForceMode.Force);
-    }
+    //private void FixedUpdate()
+    //{
+    //    rb.AddForce(force, ForceMode.Force);
+    //}
 
     private bool onGround()
     {
