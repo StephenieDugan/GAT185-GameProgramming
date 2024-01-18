@@ -14,7 +14,12 @@ public class Player : MonoBehaviour
     [SerializeField] voidEvent gameStartEvent = default;
 
     private int score = 0;
-    public int Score { get { return score; } set { score = value; scoreText.text = "Score: " + score; scoreEvent.RaiseEvent(score); } }
+    public int Score { 
+        get { return score; } 
+
+        set { score = value; 
+            scoreText.text = "Score: " + score; 
+            scoreEvent.RaiseEvent(score); } }
 
     private void Start()
     {
@@ -25,7 +30,7 @@ public class Player : MonoBehaviour
         score += points;
     }
 
-    private void onEnable()
+    private void OnEnable()
     {
         gameStartEvent.Subscribe(onStartGame);
     }

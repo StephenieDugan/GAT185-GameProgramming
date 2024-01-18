@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 545, y: 4}
+  m_AnchoredPosition: {x: 857, y: -10}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &11340157
@@ -188,10 +188,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lives
+  m_text: 'Lives:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1a32434f6a8865340b0f2e2726a1021a, type: 2}
-  m_sharedMaterial: {fileID: 8783001186443557120, guid: 1a32434f6a8865340b0f2e2726a1021a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ea1545c6de006994bbeb47d84a4cbaa5, type: 2}
+  m_sharedMaterial: {fileID: 7830604228029614927, guid: ea1545c6de006994bbeb47d84a4cbaa5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -513,8 +513,8 @@ MonoBehaviour:
   timerUI: {fileID: 1758543939}
   healthUI: {fileID: 1186373479}
   health: {fileID: 11400000, guid: 3f6ea68447cd9b943af6f46190681d34, type: 2}
-  scoreEvent: {fileID: 0}
-  gameStartEvent: {fileID: 0}
+  scoreEvent: {fileID: 11400000, guid: d2b6e837fc094c4418e232551490bb09, type: 2}
+  gameStartEvent: {fileID: 11400000, guid: cd44f10b336c9bc44920a8480d2ecae0, type: 2}
   state: 0
   timer: 0
   lives: 0
@@ -545,10 +545,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adfdaf6c1c84c754d844d6212d46dc03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _event: {fileID: 0}
+  _event: {fileID: 11400000, guid: cd44f10b336c9bc44920a8480d2ecae0, type: 2}
   listener:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 477754308}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: onStartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &488125504
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,7 +828,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -4, y: 4}
+  m_AnchoredPosition: {x: 16, y: -12}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &628833655
@@ -839,10 +851,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Score '
+  m_text: 'Score:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1a32434f6a8865340b0f2e2726a1021a, type: 2}
-  m_sharedMaterial: {fileID: 8783001186443557120, guid: 1a32434f6a8865340b0f2e2726a1021a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ea1545c6de006994bbeb47d84a4cbaa5, type: 2}
+  m_sharedMaterial: {fileID: 7830604228029614927, guid: ea1545c6de006994bbeb47d84a4cbaa5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1498,7 +1510,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 20, y: -120}
+  m_AnchoredPosition: {x: 865, y: -81}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1398006190
@@ -2932,10 +2944,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Timer
+  m_text: 'Timer:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1a32434f6a8865340b0f2e2726a1021a, type: 2}
-  m_sharedMaterial: {fileID: 8783001186443557120, guid: 1a32434f6a8865340b0f2e2726a1021a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ea1545c6de006994bbeb47d84a4cbaa5, type: 2}
+  m_sharedMaterial: {fileID: 7830604228029614927, guid: ea1545c6de006994bbeb47d84a4cbaa5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3025,7 +3037,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0.8106613, y: 4}
+  m_AnchoredPosition: {x: 6, y: -12}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1889898717
@@ -3037,12 +3049,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1889898723}
+  - component: {fileID: 1889898724}
   - component: {fileID: 1889898722}
   - component: {fileID: 1889898721}
   - component: {fileID: 1889898720}
   - component: {fileID: 1889898719}
   - component: {fileID: 1889898718}
-  - component: {fileID: 1889898724}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -3196,9 +3208,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 628833655}
   health: {fileID: 11400000, guid: 3f6ea68447cd9b943af6f46190681d34, type: 2}
-  characterController: {fileID: 0}
-  scoreEvent: {fileID: 0}
-  gameStartEvent: {fileID: 0}
+  characterController: {fileID: 1889898722}
+  scoreEvent: {fileID: 11400000, guid: d2b6e837fc094c4418e232551490bb09, type: 2}
+  gameStartEvent: {fileID: 11400000, guid: cd44f10b336c9bc44920a8480d2ecae0, type: 2}
 --- !u!1 &1898287266
 GameObject:
   m_ObjectHideFlags: 0
