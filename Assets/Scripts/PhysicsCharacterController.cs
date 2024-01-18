@@ -33,7 +33,7 @@ public class PhysicsCharacterController : MonoBehaviour
         rb.AddForce(force,ForceMode.Force);
 
         Debug.DrawRay(transform.position, Vector3.down * rayLength, Color.red);
-        if (Input.GetButtonDown("Jump") && onGround())
+        if (Input.GetButtonDown("Jump") && OnGround())
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }

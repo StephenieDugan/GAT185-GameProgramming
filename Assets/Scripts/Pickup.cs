@@ -14,11 +14,11 @@ public class Pickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.TryGetComponent(out Player player))
+        Player player = other.GetComponent<Player>();
+        if (player != null)
         {
             player.AddPoints(10);
         }
-        
 
         Instantiate(pickupPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);

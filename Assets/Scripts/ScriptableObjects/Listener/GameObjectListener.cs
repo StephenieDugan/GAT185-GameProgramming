@@ -19,9 +19,9 @@ public class GameObjectListener : MonoBehaviour
         _event?.Unsubscribe(Respond);
     }
 
-    private void Respond(GameObject value)
+    private void Respond(GameObject gameobject)
     {
-        listener?.Invoke(value);
+        listener?.Invoke(gameobject);
     }
 
 }

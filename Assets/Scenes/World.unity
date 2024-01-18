@@ -190,8 +190,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Lives:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ea1545c6de006994bbeb47d84a4cbaa5, type: 2}
-  m_sharedMaterial: {fileID: 7830604228029614927, guid: ea1545c6de006994bbeb47d84a4cbaa5, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6991a71bcfdf23c4ba12673d09b1c54c, type: 2}
+  m_sharedMaterial: {fileID: -73033109215636252, guid: 6991a71bcfdf23c4ba12673d09b1c54c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -521,6 +521,7 @@ GameObject:
   - component: {fileID: 477754308}
   - component: {fileID: 477754310}
   - component: {fileID: 477754311}
+  - component: {fileID: 477754312}
   m_Layer: 0
   m_Name: MainManager
   m_TagString: Untagged
@@ -545,12 +546,12 @@ MonoBehaviour:
   timerUI: {fileID: 1758543939}
   healthUI: {fileID: 1186373479}
   health: {fileID: 11400000, guid: 3f6ea68447cd9b943af6f46190681d34, type: 2}
-  respawn: {fileID: 0}
+  respawn: {fileID: 470848741}
   gameStartEvent: {fileID: 11400000, guid: cd44f10b336c9bc44920a8480d2ecae0, type: 2}
   respawnEvent: {fileID: 11400000, guid: 9c22a80506f708144960d985fdb82924, type: 2}
   state: 0
-  timer: 0
-  lives: 0
+  timer: 100
+  lives: 3
 --- !u!4 &477754309
 Transform:
   m_ObjectHideFlags: 0
@@ -614,6 +615,34 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: onPlayerDead
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &477754312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477754307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1767cd292365554cab3427153bb4f15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _event: {fileID: 11400000, guid: 9c22a80506f708144960d985fdb82924, type: 2}
+  listener:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1889898724}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnRespawn
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -914,8 +943,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Score:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ea1545c6de006994bbeb47d84a4cbaa5, type: 2}
-  m_sharedMaterial: {fileID: 7830604228029614927, guid: ea1545c6de006994bbeb47d84a4cbaa5, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6991a71bcfdf23c4ba12673d09b1c54c, type: 2}
+  m_sharedMaterial: {fileID: -73033109215636252, guid: 6991a71bcfdf23c4ba12673d09b1c54c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3247,8 +3276,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Timer:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ea1545c6de006994bbeb47d84a4cbaa5, type: 2}
-  m_sharedMaterial: {fileID: 7830604228029614927, guid: ea1545c6de006994bbeb47d84a4cbaa5, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6991a71bcfdf23c4ba12673d09b1c54c, type: 2}
+  m_sharedMaterial: {fileID: -73033109215636252, guid: 6991a71bcfdf23c4ba12673d09b1c54c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3338,7 +3367,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 6, y: -12}
+  m_AnchoredPosition: {x: 16.7, y: -3.3}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1889898717
@@ -3352,7 +3381,6 @@ GameObject:
   - component: {fileID: 1889898723}
   - component: {fileID: 1889898724}
   - component: {fileID: 1889898722}
-  - component: {fileID: 1889898725}
   - component: {fileID: 1889898721}
   - component: {fileID: 1889898720}
   - component: {fileID: 1889898719}
@@ -3514,34 +3542,6 @@ MonoBehaviour:
   scoreEvent: {fileID: 11400000, guid: d2b6e837fc094c4418e232551490bb09, type: 2}
   gameStartEvent: {fileID: 11400000, guid: cd44f10b336c9bc44920a8480d2ecae0, type: 2}
   playerDeadEvent: {fileID: 11400000, guid: 712525ee47bc3c441a2c1547a1ef8f86, type: 2}
---- !u!114 &1889898725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1889898717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1767cd292365554cab3427153bb4f15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _event: {fileID: 11400000, guid: 9c22a80506f708144960d985fdb82924, type: 2}
-  listener:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1889898717}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1898287266
 GameObject:
   m_ObjectHideFlags: 0

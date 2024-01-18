@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private TMP_Text scoreText;
+    [SerializeField] TMP_Text scoreText;
     [SerializeField] FloatVariable health;
     [SerializeField] PhysicsCharacterController characterController;
     [Header("Events")]
@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     }
     public void AddPoints(int points)
     {
-        score += points;
+        Score += points;
     }
     public void Damage(float damage)
     {
