@@ -13,9 +13,12 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] Slider healthUI;
 
     [SerializeField] FloatVariable health;
+
+    [SerializeField] GameObject respawn;
     [Header("Events")]
-    [SerializeField] IntEvent scoreEvent;
+    //[SerializeField] IntEvent scoreEvent;
     [SerializeField] voidEvent gameStartEvent;
+    [SerializeField] GameObjectEvent respawnEvent;
    public enum State
     {
         TITLE,
@@ -27,13 +30,13 @@ public class GameManager : Singleton<GameManager>
     public float timer = 0;
     public int lives = 0;
 
-    private void onEnable()
+    private void OnEnable()
     {
-        scoreEvent.Subscribe(onAddPoints);
+        //scoreEvent.Subscribe(onAddPoints);
     }
-    private void onDisable()
+    private void OnDisable()
     {
-        scoreEvent.Unsubscribe(onAddPoints);
+        //scoreEvent.Unsubscribe(onAddPoints);
     }
     void Start()
     {
@@ -69,9 +72,11 @@ public class GameManager : Singleton<GameManager>
                 Time.timeScale = 1;
                 timer = 60;
                 lives = 3;
+                health.value = 100;
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
                 gameStartEvent.RaiseEvent();
+                respawnEvent.RaiseEvent(respawn);
 
                 state = State.PLAY_GAME;
                 break;
@@ -94,7 +99,10 @@ public class GameManager : Singleton<GameManager>
     {
         state = State.START_GAME;
     }
-
+    public void onPlayerDead()
+    {
+        state = State.TITLE;
+    }
     public void onAddPoints(int points)
     {
         print(points);

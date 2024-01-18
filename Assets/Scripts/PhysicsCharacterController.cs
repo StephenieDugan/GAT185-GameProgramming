@@ -44,8 +44,14 @@ public class PhysicsCharacterController : MonoBehaviour
     //    rb.AddForce(force, ForceMode.Force);
     //}
 
-    private bool onGround()
+    private bool OnGround()
     {
         return Physics.Raycast(transform.position, Vector3.down, rayLength, groundLayerMask);
+    }
+
+    public void Reset()
+    {
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
     }
 }
