@@ -6,6 +6,7 @@ public class Wave : MonoBehaviour
 {
     [SerializeField] float rate = 1;
     [SerializeField] float amplitude = 1;
+    [SerializeField] bool leftRight = false;
 
     float time = 0;
     Vector3 origin = Vector3.zero;
@@ -19,7 +20,11 @@ public class Wave : MonoBehaviour
     {
         time += Time.deltaTime * rate;
         float wave = Mathf.Sin(time) * amplitude;
-
-        transform.position = origin + (Vector3.up * wave);
+        if (!leftRight) { transform.position = origin + (Vector3.up * wave);}
+        else
+        {
+            transform.position = origin + (Vector3.fwd * wave);
+        }
+        
     }
 }

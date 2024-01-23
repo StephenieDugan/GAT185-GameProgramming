@@ -7,11 +7,12 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: red
+  m_Name: green
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - _ALPHABLEND_ON
   - _EMISSION
   - _GLOSSYREFLECTIONS_OFF
   - _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
@@ -19,8 +20,9 @@ Material:
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 3000
+  stringTagMap:
+    RenderType: Transparent
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
@@ -67,20 +69,20 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DstBlend: 0
-    - _GlossMapScale: 0.795
+    - _DstBlend: 10
+    - _GlossMapScale: 0.491
     - _Glossiness: 0.118
     - _GlossyReflections: 0
-    - _Metallic: 0.604
-    - _Mode: 0
+    - _Metallic: 1
+    - _Mode: 2
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 1
     - _SpecularHighlights: 1
-    - _SrcBlend: 1
+    - _SrcBlend: 5
     - _UVSec: 0
-    - _ZWrite: 1
+    - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 0.90588236, g: 0.02153778, b: 0.076296434, a: 1}
-    - _EmissionColor: {r: 0.3333333, g: 0.033419903, b: 0.0324947, a: 1}
+    - _Color: {r: 0.19478834, g: 0.40251565, b: 0.13543764, a: 1}
+    - _EmissionColor: {r: 0.0072495486, g: 0.037254903, b: 0.0046230317, a: 1}
   m_BuildTextureStacks: []
