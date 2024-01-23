@@ -6,6 +6,7 @@ public class Pickup : MonoBehaviour
 {
     [SerializeField] GameObject pickupPrefab = null;
     [SerializeField] voidEvent TimeBuffEvent;
+   
 
 
     private void OnCollisionEnter(Collision collision)
@@ -33,6 +34,7 @@ public class Pickup : MonoBehaviour
         }
 
         Instantiate(pickupPrefab, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        gameObject.GetComponent<MeshRenderer>().enabled = false;
     }
 }
