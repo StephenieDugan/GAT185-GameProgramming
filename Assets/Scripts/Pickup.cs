@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pickup : MonoBehaviour
 {
     [SerializeField] GameObject pickupPrefab = null;
+    [SerializeField] voidEvent TimeBuffEvent;
 
 
     private void OnCollisionEnter(Collision collision)
@@ -17,7 +18,18 @@ public class Pickup : MonoBehaviour
         Player player = other.GetComponent<Player>();
         if (player != null)
         {
-            player.AddPoints(10);
+            if(tag == "Coin1")
+            {
+                player.AddPoints(10);
+            }
+            else if(tag == "Coin2")
+            {
+                player.AddPoints(30);
+            }
+            else if(tag == "TimeBuff")
+            {
+                TimeBuffEvent.RaiseEvent();
+            }
         }
 
         Instantiate(pickupPrefab, transform.position, Quaternion.identity);

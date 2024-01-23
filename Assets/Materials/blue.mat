@@ -13,10 +13,9 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _EMISSION
-  - _GLOSSYREFLECTIONS_OFF
   - _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
   m_InvalidKeywords: []
-  m_LightmapFlags: 2
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -68,10 +67,10 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _GlossMapScale: 0.795
-    - _Glossiness: 0.118
-    - _GlossyReflections: 0
-    - _Metallic: 0.604
+    - _GlossMapScale: 0.739
+    - _Glossiness: 0.63
+    - _GlossyReflections: 1
+    - _Metallic: 1
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -81,6 +80,6 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.90588236, g: 0.02153778, b: 0.076296434, a: 1}
-    - _EmissionColor: {r: 0.3333333, g: 0.033419903, b: 0.0324947, a: 1}
+    - _Color: {r: 0.2013171, g: 0.41231662, b: 0.735849, a: 1}
+    - _EmissionColor: {r: 0.007843133, g: 0.0113042975, b: 0.2901961, a: 1}
   m_BuildTextureStacks: []

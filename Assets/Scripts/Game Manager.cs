@@ -8,7 +8,8 @@ using UnityEngine.UI;
 public class GameManager : Singleton<GameManager>
 {
     [SerializeField] GameObject titleUI;
-    [SerializeField] TMP_Text livesUI;
+    [SerializeField] GameObject GameOverUI;
+    [SerializeField] GameObject WinUI;
     [SerializeField] TMP_Text timerUI;
     [SerializeField] Slider healthUI;
 
@@ -24,11 +25,12 @@ public class GameManager : Singleton<GameManager>
         TITLE,
         START_GAME,
         PLAY_GAME,
-        GAME_OVER
+        GAME_OVER,
+        GAME_WON
     }
     public State state = State.TITLE;
     public float timer = 0;
-    public int lives = 0;
+   
 
     private void OnEnable()
     {
@@ -43,13 +45,6 @@ public class GameManager : Singleton<GameManager>
         
     }
 
-
-    public int Lives
-    {
-        get { return lives; }
-        set { lives = value; livesUI.text = $"lives: {lives}"; }
-
-    }
     public float Timer
     {
         get { return timer; }
@@ -62,24 +57,27 @@ public class GameManager : Singleton<GameManager>
         {
             case State.TITLE:
                 titleUI.SetActive(true);
+                GameOverUI.SetActive(false);
+                WinUI.SetActive(false);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 Time.timeScale = 0;
                 break;
-            case State.START_GAME:
 
+            case State.START_GAME:
                 titleUI.SetActive(false);
+                GameOverUI.SetActive(false);
+                WinUI.SetActive(false);
                 Time.timeScale = 1;
                 timer = 60;
-                lives = 3;
                 health.value = 100;
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
-                gameStartEvent.RaiseEvent();
+                gameStartEvent.RaiseEvent();                
                 respawnEvent.RaiseEvent(respawn);
-
                 state = State.PLAY_GAME;
                 break;
+
             case State.PLAY_GAME:
                 Timer -= Time.deltaTime;
                 if (Timer <= 0)
@@ -87,11 +85,19 @@ public class GameManager : Singleton<GameManager>
                     state = State.GAME_OVER;
                 }
                 break;
-            case State.GAME_OVER:
 
+            case State.GAME_OVER:
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                GameOverUI.SetActive(true);
+                break; 
+            case State.GAME_WON:
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                WinUI.SetActive(true);
                 break;
         }
-        healthUI.value = health.value / 100.0f;
+        //healthUI.value = health.value / 100.0f;
 
 
     }
@@ -99,13 +105,25 @@ public class GameManager : Singleton<GameManager>
     {
         state = State.START_GAME;
     }
-    public void onPlayerDead()
+    public void OnExitGame()
     {
         state = State.TITLE;
+    }
+    public void onPlayerDead()
+    {
+        state = State.GAME_OVER;
+    }
+    public void onPlayerWin()
+    {
+        state = State.GAME_WON;
     }
     public void onAddPoints(int points)
     {
         print(points);
+    }
+    public void onAddTime(int time)
+    {
+        Timer += time;
     }
 
 }
