@@ -14,7 +14,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] Slider healthUI;
 
     [SerializeField] FloatVariable health;
-
+    
     [SerializeField] GameObject respawn;
     [Header("Events")]
     //[SerializeField] IntEvent scoreEvent;
@@ -48,7 +48,7 @@ public class GameManager : Singleton<GameManager>
     public float Timer
     {
         get { return timer; }
-        set { timer = value; timerUI.text = string.Format("{0:F1}",timer); }
+        set { timer = value; timerUI.text = "Timer:" + string.Format("{0:F1}",timer); }
     }
 
     void Update()
@@ -82,6 +82,7 @@ public class GameManager : Singleton<GameManager>
                 Timer -= Time.deltaTime;
                 if (Timer <= 0)
                 {
+
                     state = State.GAME_OVER;
                 }
                 break;

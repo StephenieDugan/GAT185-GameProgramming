@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] TMP_Text livesUI;
     [SerializeField] FloatVariable health;
     [SerializeField] PhysicsCharacterController characterController;
+    [SerializeField] GameObject deadPrefab = null;
     [Header("Events")]
     [SerializeField] IntEvent scoreEvent = default;
     [SerializeField] voidEvent gameStartEvent = default;
@@ -18,6 +19,7 @@ public class Player : MonoBehaviour
 
     private int score = 0;
     public int lives = 0;
+    public int winScore = 0;
     public int Score { 
         get { return score; } 
 
@@ -41,7 +43,7 @@ public class Player : MonoBehaviour
     public void AddPoints(int points)
     {
         Score += points;
-        if(Score >= 10)
+        if(Score >=  winScore)
         {
             gameWinEvent.RaiseEvent();
         }
@@ -51,6 +53,7 @@ public class Player : MonoBehaviour
         health.value -= damage;
         if(health.value <=0)
         {
+            Instantiate(deadPrefab, transform.position, Quaternion.identity);
             playerDeadEvent.RaiseEvent();
             
         }
