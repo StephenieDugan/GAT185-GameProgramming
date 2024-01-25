@@ -98,7 +98,7 @@ public class GameManager : Singleton<GameManager>
                 WinUI.SetActive(true);
                 break;
         }
-        //healthUI.value = health.value / 100.0f;
+        healthUI.value = health.value / 100.0f;
 
 
     }
