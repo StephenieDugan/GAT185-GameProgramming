@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Pickup : MonoBehaviour
 {
     [SerializeField] GameObject pickupPrefab = null;
+    [SerializeField]  AudioClip pickupPrefabSound = null;
     [SerializeField] voidEvent TimeBuffEvent;
    
 
@@ -34,6 +36,7 @@ public class Pickup : MonoBehaviour
         }
 
         Instantiate(pickupPrefab, transform.position, Quaternion.identity);
+        Instantiate(pickupPrefabSound, transform.position, Quaternion.identity);
         gameObject.SetActive(false);
         gameObject.GetComponent<MeshRenderer>().enabled = false;
     }
