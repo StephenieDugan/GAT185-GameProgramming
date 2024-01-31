@@ -23,3 +23,8 @@ public class Damage : MonoBehaviour
         }
     }
 }
+public interface IDamageable
+{
+    void ApplyDamage(float damage);
+}
+
