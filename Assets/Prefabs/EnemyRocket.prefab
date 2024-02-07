@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 8504053486948272048}
   - component: {fileID: 6102730365707997422}
   - component: {fileID: 5872888831904223032}
-  m_Layer: 7
-  m_Name: Rocket
+  m_Layer: 8
+  m_Name: EnemyRocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e0e2851932a4f24aa6bdc7d91233f6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoData: {fileID: 11400000, guid: dd96bd4555dec78469479fd4e2f37403, type: 2}
+  ammoData: {fileID: 11400000, guid: 48080368231f90e438f23a3de9ef7c72, type: 2}
   action: {fileID: 8915502517635952131}
 --- !u!114 &8915502517635952131
 MonoBehaviour:
@@ -223,7 +223,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1598324380993774, guid: 7eedf4519460a0842af962a850d94e97, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4021296802695634, guid: 7eedf4519460a0842af962a850d94e97, type: 3}
       propertyPath: m_LocalScale.z
@@ -317,7 +317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1550517015285282, guid: e221d3ddf51167c4db44235d8c68ee36, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4637046966039350, guid: e221d3ddf51167c4db44235d8c68ee36, type: 3}
       propertyPath: m_LocalPosition.x
