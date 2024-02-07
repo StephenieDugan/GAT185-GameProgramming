@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KinematicController : MonoBehaviour, IDamageable
+public class KinematicController : MonoBehaviour, IDamagable
 {
     [SerializeField, Range(0,40)] float speed = 1;
     [SerializeField] float maxDistance = 5;

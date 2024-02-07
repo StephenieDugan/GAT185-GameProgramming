@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7783911489036741731}
+  - component: {fileID: 5615606889374559868}
+  - component: {fileID: 8915502517635952131}
   - component: {fileID: 8504053486948272048}
   - component: {fileID: 6102730365707997422}
-  - component: {fileID: 5615606889374559868}
   - component: {fileID: 5872888831904223032}
   m_Layer: 3
   m_Name: Rocket
@@ -37,6 +38,33 @@ Transform:
   - {fileID: 382806458608948639}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5615606889374559868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7122147334408760794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e0e2851932a4f24aa6bdc7d91233f6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammoData: {fileID: 11400000, guid: dd96bd4555dec78469479fd4e2f37403, type: 2}
+  action: {fileID: 8915502517635952131}
+--- !u!114 &8915502517635952131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7122147334408760794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d85f47fae49cd434a8697c2dd7d4fb9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagName: 
 --- !u!82 &8504053486948272048
 AudioSource:
   m_ObjectHideFlags: 0
@@ -160,19 +188,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5615606889374559868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7122147334408760794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e0e2851932a4f24aa6bdc7d91233f6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ammoData: {fileID: 11400000, guid: dd96bd4555dec78469479fd4e2f37403, type: 2}
 --- !u!135 &5872888831904223032
 SphereCollider:
   m_ObjectHideFlags: 0

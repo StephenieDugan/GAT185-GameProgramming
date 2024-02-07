@@ -2,9 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerShip : MonoBehaviour
+public class PlayerShip : Interactable
 {
     [SerializeField] private Inventory inventory;
+    [SerializeField] private Action action;
+
+    public float health = 100;
+    private void Start()
+    {
+        if(action != null)
+        {
+            action.onEnter = OnInteractStart;
+            action.onStay = OnInteractActive;
+        }
+    }
+
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
@@ -15,5 +27,19 @@ public class PlayerShip : MonoBehaviour
         {
             inventory.onStopUse();
         }
+    }
+    public override void OnInteractActive(GameObject gameObject)
+    {
+       //
+    }
+
+    public override void OnInteractEnd(GameObject gameObject)
+    {
+       //
+    }
+
+    public override void OnInteractStart(GameObject gameObject)
+    {
+       //
     }
 }
