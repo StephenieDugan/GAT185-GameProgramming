@@ -23,7 +23,7 @@ public class Wave : MonoBehaviour
         if (!leftRight) { transform.position = origin + (Vector3.up * wave);}
         else
         {
-            transform.position = origin + (Vector3.fwd * wave);
+            transform.position = origin + (Vector3.forward * wave);
         }
         
     }

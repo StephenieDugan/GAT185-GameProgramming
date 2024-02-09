@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerShip : MonoBehaviour, IDamagable
 {
     [SerializeField] private Inventory inventory;
+    [SerializeField] private PathFollower pathFollower;
     //events
     [SerializeField] private IntEvent scoreEvent;
     [SerializeField] private IntVariable score;
@@ -29,6 +30,8 @@ public class PlayerShip : MonoBehaviour, IDamagable
         {
             inventory.onStopUse();
         }
+        pathFollower.speed = (Input.GetKey(KeyCode.Escape)) ? 2 : 1;
+       
     }
    
 
@@ -36,6 +39,12 @@ public class PlayerShip : MonoBehaviour, IDamagable
     {
         score.value += points;
         Debug.Log(score.value);
+    }
+    
+    public void ApplyHealth(float health)
+    {
+        this.health.value += health;
+        this.health.value = Mathf.Min(health, 100);
     }
 
     public void ApplyDamage(float damage)
